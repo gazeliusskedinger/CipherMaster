@@ -1,0 +1,4 @@
+ -h Help
+ -c [lang] Charset.
+        lang = se : swedish
+               en : english
