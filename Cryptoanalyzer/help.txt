@@ -1,4 +1,4 @@
  -h Help
- -c [lang] Charset.
+ -c [lang] Ciphers.Charset.
         lang = se : swedish
                en : english
