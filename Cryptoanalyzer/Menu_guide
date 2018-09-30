@@ -1,8 +1,9 @@
    Menu
  +=-=-=-=-=-=-=-=-=-=-=-=-=-+
   0-Exit.
-  1-Crypto Analysis.
-  2-Decrypt.
-  3-Encrypt.
-  4-Make Plaintext List.
+  1-Rot encrypt.
+  2-Rot decrypt.
+  3-Rot bruteforce.
+  4-Cryptoanalysis.
+  5-
  +-=-=-=-=-=-=-=-=-=-=-=-=-=+

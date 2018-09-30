@@ -1,6 +1,6 @@
 package Ciphers;
 
-public class Ciphers extends AuxTextTools {
+public class Ciphers extends Cipher {
 
     private final int ASCII_START = 97;
     //private final int ASCII_STOP = 122;
@@ -9,55 +9,6 @@ public class Ciphers extends AuxTextTools {
 
     char[][] transPosArray;
     String clearText;
-
-    public Ciphers(String charset) {
-        Charset cs = new Charset();
-        if (charset.equals("se")) {
-            cs.setSet(0);
-            this.ALPHABET = cs.getSet();
-        } else if (charset.equals("en")) {
-            cs.setSet(1);
-            this.ALPHABET = cs.getSet();
-        }
-    }
-
-    //private int LETTERS = ALPHABET.length;
-
-    /**
-     * @param text
-     * @param key
-     */
-    public void makeRot(String text, int key) {
-        char[] array = text.toCharArray();
-        for (int i = 0; i < text.length(); i++) {
-            System.out.print(encrypt(array[i], key));
-        }
-    }
-
-    /**
-     * @param text
-     * @param key
-     */
-
-    public void decryptRot(String text, int key) {
-        char[] array = text.toCharArray();
-        for (int i = 0; i < text.length(); i++) {
-            System.out.print(encrypt(array[i], ALPHABET.length - key));
-        }
-
-    }
-
-    /**
-     * @param cipher
-     */
-
-    public void bruteRotation(String cipher) {
-
-        for (int i = 0; i < 26; i++) {
-            decryptRot(cipher, ALPHABET.length - i);
-            System.out.println();
-        }
-    }
 
     /**
      * @param times
@@ -279,25 +230,6 @@ public class Ciphers extends AuxTextTools {
             keyrotate++;
         }
         System.out.println(clearText);
-    }
-
-    /**
-     * @param ch
-     * @param key
-     * @return
-     */
-
-    private char encrypt(char ch, int key) {
-        int base = 0;
-        if ('A' <= ch && ch <= 'Z') {
-            base = 'A';
-        } else if ('a' <= ch && ch <= 'z') {
-            base = 'a';
-        } else {
-            return ch;
-        }
-        int offset = ch - base + key;
-        return (char) ((offset % 26) + base);
     }
 
     /**

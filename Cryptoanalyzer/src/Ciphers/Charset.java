@@ -3,18 +3,22 @@ package Ciphers;
 public class Charset {
     /**
      * 0 = sv
-     * 1 = eng
+     * 1 = en
      */
     private char[][] set = {{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'å', 'ä', 'ö'},
                             {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}};
-    private int i = 0;
+    private final int index;
 
-    /**
-     *
-     * @param i
-     */
-    public void setSet(int i) {
-        this.i = i;
+
+    public Charset(String var){
+        if (var.equals("se")) {
+            this.index = 0;
+        } else if (var.equals("en")) {
+            this.index = 1;
+        }
+        else{
+            this.index = 1;
+        }
     }
 
     /**
@@ -23,7 +27,7 @@ public class Charset {
      */
 
     public char[] getSet() {
-        return set[i];
+        return set[index];
     }
 
     // TODO Add!!!!

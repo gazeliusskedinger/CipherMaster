@@ -3,21 +3,13 @@ package Ciphers;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class Tools extends AuxTextTools {
+public class Tools extends Cipher {
 
     private char[] ALPHABET;
 
 
 
     public Tools(String charset){
-        Charset cs = new Charset();
-        if (charset.equals("se")) {
-            cs.setSet(0);
-            this.ALPHABET = cs.getSet();
-        } else if (charset.equals("en")) {
-            cs.setSet(1);
-            this.ALPHABET = cs.getSet();
-        }
     }
 
     /**
