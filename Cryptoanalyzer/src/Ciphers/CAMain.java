@@ -8,7 +8,6 @@ public class CAMain {
         ComandLineMenu clm = new ComandLineMenu(args);
         clm.menu();
         Charset cs = new Charset(validArgs[0]);
-        Rot rot = new Rot(cs.getSet());
 
     }
 

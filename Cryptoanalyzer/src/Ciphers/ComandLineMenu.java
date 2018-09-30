@@ -32,14 +32,24 @@ public class ComandLineMenu {
                 case "1":
                     cip = new Rot(Alph);
                     System.out.println(cip.encrypt(fh.readFile("Plaintext.txt"),"4"));
-
                     break;
                 case "2":
-                    Rot rot = new Rot(Alph);
-                    System.out.println(rot.encrypt(fh.readFile("Plaintext.txt"),"4"));
-
+                    cip = new Rot(Alph);
+                    System.out.println(cip.encrypt(fh.readFile("Plaintext.txt"),"4"));
                     break;
-                case "3":
+                case "4":
+                    System.out.println("Do A Third Thing.");
+                    break;
+                case "5":
+                    System.out.println("Do A Third Thing.");
+                    break;
+                case "6":
+                    System.out.println("Do A Third Thing.");
+                    break;
+                case "7":
+                    System.out.println("Do A Third Thing.");
+                    break;
+                case "8":
                     System.out.println("Do A Third Thing.");
                     break;
                 default:
