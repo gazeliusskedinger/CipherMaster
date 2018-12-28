@@ -5,6 +5,7 @@ public class Rot extends Cipher implements ICipher{
     public Rot(char[] alpha){
         this.ALPHABET = alpha;
     }
+
     @Override
     public String encrypt(String text, String key){
 
@@ -18,6 +19,7 @@ public class Rot extends Cipher implements ICipher{
 
         return cipher;
     }
+
     @Override
     public String decrypt(String cipher, String key){
 
@@ -31,6 +33,7 @@ public class Rot extends Cipher implements ICipher{
 
         return text;
     }
+
     @Override
     public String brute(String cipher) {
 
@@ -41,9 +44,22 @@ public class Rot extends Cipher implements ICipher{
         }
         return bruted;
     }
+
     @Override
     public void analysis(String cipher){
 
+    }
+
+    public String reverseEncrypt(String Plain, String key){
+        return encrypt(strToStrBw(Plain),key);
+    }
+
+    public String reverseDecrypt(String Cipher, String key){
+        return decrypt(strToStrBw(Cipher),key);
+    }
+
+    public String reverseBrute(String Cipher){
+        return brute(strToStrBw(Cipher));
     }
 
     private char process(char ch, int key) {

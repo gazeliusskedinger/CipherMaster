@@ -9,7 +9,7 @@ public class PigLatin extends Cipher implements ICipher{
     @Override
     public String encrypt(String plain, String key) {
         plain = plain + " ";
-        String cipherBet = alphabetBackwardstoString();
+        String cipherBet = charArrToStr(ALPHABET);
         String cipherText = "";
         int place = 0;
 
@@ -34,7 +34,7 @@ public class PigLatin extends Cipher implements ICipher{
     @Override
     public String decrypt(String cipher, String key) {
         cipher = cipher + " ";
-        String cipherBet = alphabetBackwardstoString();
+        String cipherBet = charArrToStr(ALPHABET);
         String plainText = "";
         int place = 0;
 
@@ -66,22 +66,5 @@ public class PigLatin extends Cipher implements ICipher{
         return null;
     }
 
-    private char[] alphabetBackwards() {
-        char[] alphabetBackwards = new char[ALPHABET.length];
-        int j = 0;
-        for (int i = ALPHABET.length - 1; i >= 0; i--) {
-            alphabetBackwards[j] = ALPHABET[i];
-            j++;
-        }
-        return alphabetBackwards;
-    }
 
-    private String alphabetBackwardstoString() {
-        char[] ar = alphabetBackwards();
-        String alfa = "";
-        for (int i = 0; i < ar.length; i++) {
-            alfa += ar[i];
-        }
-        return alfa;
-    }
 }

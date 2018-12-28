@@ -9,7 +9,9 @@ public class Tools extends Cipher {
 
 
 
-    public Tools(String charset){
+    public Tools(char[] charset){
+        this.ALPHABET = charset;
+
     }
 
     /**
@@ -56,9 +58,21 @@ public class Tools extends Cipher {
        countPieces(trigrams,str, 3);
     }
 
-    public void keyLengthBlock(String ciphertext){
-
+    public static void calcKeyLength(String ciphertext) {
+        int[] collisions = new int[ciphertext.length()];
+        for (int i = 0; i < ciphertext.length();i++ ){
+            for (int j = 0; j < ciphertext.length();j++){
+                //System.out.println(i+ " : "+ j +" "+ciphertext.charAt((j+i)%ciphertext.length()) + " : " + ciphertext.charAt(j)+ " : "+ (ciphertext.charAt((j+i)%ciphertext.length()) == ciphertext.charAt(j)));
+                if(ciphertext.charAt((j+i)%ciphertext.length()) == ciphertext.charAt(j)){
+                    collisions[i]++;
+                }
+            }
+        }
+        for (int i = 0; i < collisions.length; i++){
+            System.out.println(i + " : "+ collisions[i]);
+        }
     }
+
 
     /**
      *

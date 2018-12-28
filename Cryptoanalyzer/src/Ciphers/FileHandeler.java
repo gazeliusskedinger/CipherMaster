@@ -25,7 +25,14 @@ public class FileHandeler {
         }
         return text;
     }
-    public void storeOnFile(String filePath, String text){
+
+    public void saveFile(String filePath, String text){
+
+    }
+
+    public void makeFile(String filePath){
+        File file = new File(filePath);
+
 
     }
 }
